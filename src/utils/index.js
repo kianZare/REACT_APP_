@@ -27,7 +27,7 @@ export const createUser = async (username, email, password) =>{
 
 export const readUsers = async (cookie) =>{
     try {
-        const response = await fetch("http://localhost:5001/readUser", {
+        const response = await fetch(`${process.env.REACT_API_REST_API_URL}readUser`, {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json"
@@ -44,7 +44,7 @@ export const readUsers = async (cookie) =>{
 
 export const loginUser =  async (username, email, password, setter) => {
     try {
-        const response = await fetch("http://localhost:5001/login", {
+        const response = await fetch(`${process.env.REACT_API_REST_API_URL}login`, {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -66,7 +66,7 @@ export const loginUser =  async (username, email, password, setter) => {
 
 export const authCheck = async (jwtToken) => {
     try {
-        const response = await fetch ("http://localhost:5001/authCheck", {
+        const response = await fetch (`${process.env.REACT_API_REST_API_URL}authCheck`, {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",
@@ -84,7 +84,7 @@ export const authCheck = async (jwtToken) => {
 
 export const updateUser = async (username, key, value) => {
     try {
-        const response = await fetch("http://localhost:5001/updateUser", {
+        const response = await fetch(`${process.env.REACT_API_REST_API_URL}updateUser`, {
             method: "PUT",
             headers: {
                 "Content-Type" : "application/json",
@@ -105,7 +105,7 @@ export const updateUser = async (username, key, value) => {
 
 export const deleteUser = async (username) => {
     try {
-        const response = await fetch("http://localhost:5001/deleteUser", {
+        const response = await fetch(`${process.env.REACT_API_REST_API_URL}deleteUser`, {
             method: "DELETE",
             headers: {"Content-type" : "application/json"},
             body: JSON.stringify({
