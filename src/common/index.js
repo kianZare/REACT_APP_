@@ -14,7 +14,7 @@ export const getCookie = (cookieName) => {
     console.log(re)
     try {
         // check if the name of the cookie exists in the browser
-        let cookie = document.cookie.match(re) [0]  //will raise a typeError if the cookie isn't found
+        let cookie = document.cookie.match(re)[0]  //will raise a typeError if the cookie isn't found
         console.log(cookie)
         return cookie
     } catch (error) {
